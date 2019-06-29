@@ -1,5 +1,0 @@
----
-- name: Restart shadowsocks-libev
-  systemd:
-    name: shadowsocks-libev.service
-    state: restarted

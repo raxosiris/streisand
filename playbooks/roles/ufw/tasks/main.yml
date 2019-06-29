@@ -21,14 +21,20 @@
     proto: "tcp"
     rule: "allow"
 
+- name: Ensure UFW allows socks5
+  ufw:
+    to_port: "9999"
+    proto: "tcp"
+    rule: "allow"
+
+- name: Ensure UFW allows socks5
+  ufw:
+    to_port: "9999"
+    proto: "udp"
+    rule: "allow"
+
 - name: Ensure UFW is enabled and denies by default
   ufw:
     state: "enabled"
     policy: "deny"
     direction: "incoming"
-
-- name: Ensure UFW allows nginx
-  ufw:
-    to_port: "{{ nginx_port }}"
-    proto: "tcp"
-    rule: "allow"

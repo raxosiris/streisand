@@ -36,13 +36,13 @@
           10. San Francisco    (Datacenter 2)
           11. Singapore
           12. Toronto
-        Please choose the number of your region. Press enter for default (#2) region.
-      default: "2"
+        Please choose the number of your region. Press enter for default (#5) region.
+      default: "5"
       private: no
 
     - name: "do_server_name"
       prompt: "\nWhat should the server be named? Press enter for default (streisand).\n"
-      default: "streisand"
+      default: "proxy1"
       private: no
 
     - name: "do_access_token_entry"
@@ -60,11 +60,13 @@
           If this field is left blank, the environment variable DO_API_KEY will be used.
 
           What is your DigitalOcean Personal Access Token?
+      # default: c52fd8d476b07221307c0569f067373d814f31c8cbebdc7a9290495fd55a5b1e
+      default: b5589eabfa2051dbe589e29b570f8cbd1748ce51af819ede25083b90b2431381
       private: no
 
     - name: "do_ssh_name"
       prompt: "\n\nThe following information can be found on your DigitalOcean control panel.\nhttps://cloud.digitalocean.com/settings/security\n\nWhat is the name of the DigitalOcean SSH key that you would like to use?\n  * If you have never uploaded an SSH key to DigitalOcean then the default\n    value will work!\n  * This key should match your Streisand SSH key file (default: ~/.ssh/id_rsa.pub).\n\  * DigitalOcean requires SSH keys to be unique. You cannot upload multiple\n    keys that have the same value under different names.\n\n    If you see an error that says 'SSH Key failed to be created' once the setup\n    process starts, then this is the problem. You can retry the setup process\n    using the name of the existing SSH key from the DigitalOcean control panel\n    that matches the contents of your RSA public key.\n"
-      default: "streisand"
+      default: "Main"
       private: no
 
     - name: "confirmation"

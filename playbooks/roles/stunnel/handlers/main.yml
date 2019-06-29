@@ -1,5 +1,0 @@
----
-- name: Restart stunnel
-  systemd:
-    name: stunnel.service
-    state: restarted

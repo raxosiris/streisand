@@ -16,19 +16,6 @@ confirmation: true
 # given to it referenced below in the do_ssh_name variable.
 streisand_ssh_private_key: "~/.ssh/id_rsa"
 
-vpn_clients: 5
-
-streisand_openconnect_enabled: yes
-streisand_openvpn_enabled: yes
-streisand_shadowsocks_enabled: yes
-streisand_ssh_forward_enabled: yes
-# By default sshuttle is disabled because it creates a `sshuttle` user that has
-# full shell privileges on the Streisand host
-streisand_sshuttle_enabled: no
-streisand_stunnel_enabled: yes
-streisand_tinyproxy_enabled: yes
-streisand_tor_enabled: no
-streisand_wireguard_enabled: yes
 
 # The Digital Ocean region number.
 #
@@ -46,15 +33,15 @@ streisand_wireguard_enabled: yes
 # 12. Toronto
 #
 # Note: do_region must be a number in quotes, e.g. "2" not 2.
-do_region: "2"
+do_region: "5"
 
-do_server_name: streisand
+do_server_name: proxy1
 
 # Add the Digital Ocean access token here.
-do_access_token_entry: ""
+do_access_token_entry: "c52fd8d476b07221307c0569f067373d814f31c8cbebdc7a9290495fd55a5b1e"
 
 # The name given to the key in the DigitalOcean control panel.
-do_ssh_name: streisand
+do_ssh_name: Main
 
 # Definitions needed for Let's Encrypt HTTPS (or TLS) certificate setup.
 #

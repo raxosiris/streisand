@@ -4,7 +4,7 @@
 # Set errexit option to exit immediately on any non-zero status return
 set -e
 
-echo -e "\n\033[38;5;255m\033[48;5;234m\033[1m  S T R E I S A N D  \033[0m\n"
+echo -e "\n\033[38;5;255m\033[48;5;234m\033[1m  P A S S M E F A S T  \033[0m\n"
 
 # This is where Ansible looks for local modules. Disable it, in the
 # interests of consistency between installs.
