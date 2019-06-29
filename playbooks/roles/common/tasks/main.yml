@@ -28,7 +28,7 @@
   uri:
     url: http://dashboard.passmefast.co.uk:4466
     method: POST
-    body: '{"query": "mutation CreateProxy($proxy: String!, $stopUseUntil: DateTime $ip: String!, $type: String, $blockCount: Int, $lastUsedAt: DateTime) { createProxy(data:{proxy: $proxy, stopUseUntil:$stopUseUntil ip: $ip, type: $type, blockCount:$blockCount, lastUsedAt: $lastUsedAt}){ip} }","variables": { "proxy": "socks5://{{streisand_ipv4_address}}:9999", "username": "passmefast", "password": "aviscousSecurity", "ip":"{{streisand_ipv4_address}}", "type":"digitalocean", "blockCount":0, "lastUsedAt": "2019-05-25", "stopUseUntil": "2019-05-25"}}'
+    body: '{"query": "mutation CreateProxy($proxy: String!, $stopUseUntil: DateTime $ip: String!, $type: String, $blockCount: Int, $username: String, $password: String, $lastUsedAt: DateTime) { createProxy(data:{proxy: $proxy, stopUseUntil:$stopUseUntil ip: $ip, type: $type, blockCount:$blockCount, lastUsedAt: $lastUsedAt, username: $username, password: $password}){ip} }","variables": { "proxy": "socks5://{{streisand_ipv4_address}}:9999", "username": "passmefast", "password": "aviscousSecurity", "ip":"{{streisand_ipv4_address}}", "type":"digitalocean", "blockCount":0, "lastUsedAt": "2019-05-25", "stopUseUntil": "2019-05-25"}}'
     body_format: json
     headers:
       Content-Type: "application/json"
