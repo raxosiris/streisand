@@ -61,7 +61,9 @@
 
           What is your DigitalOcean Personal Access Token?
       # default: c52fd8d476b07221307c0569f067373d814f31c8cbebdc7a9290495fd55a5b1e
-      default: b5589eabfa2051dbe589e29b570f8cbd1748ce51af819ede25083b90b2431381
+      # default: b5589eabfa2051dbe589e29b570f8cbd1748ce51af819ede25083b90b2431381
+
+      default: 0ae04665e7ef850b40dfeb2bb289c6df5f39d241a842ae3c6f73a25895bea813
       private: no
 
     - name: "do_ssh_name"
