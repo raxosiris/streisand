@@ -19,16 +19,17 @@
     autoremove: yes
 
 - name: Docker pull
-  shell: "docker pull chenhw2/brook"
+  shell: "docker pull riftbit/3proxy"
 
 - name: Docker deoloy
-  shell: "docker run -d -e 'ARGS=socks5 -l :9999 -i {{ streisand_ipv4_address }}' -p 9999:9999/tcp -p 9999:9999/udp chenhw2/brook"
+  shell: "docker run --name 3proxy -d -p 3128:3128 --restart always --env PROXY_LOGIN=passmefast --env PROXY_PASSWORD=aviscousSecurity riftbit/3proxy
+"
 
 - name: Post this proxy to database
   uri:
     url: http://dashboard.passmefast.co.uk:4466
     method: POST
-    body: '{"query": "mutation CreateProxy($proxy: String!, $stopUseUntil: DateTime $ip: String!, $type: String, $blockCount: Int, $username: String, $password: String, $lastUsedAt: DateTime) { createProxy(data:{proxy: $proxy, stopUseUntil:$stopUseUntil ip: $ip, type: $type, blockCount:$blockCount, lastUsedAt: $lastUsedAt, username: $username, password: $password}){ip} }","variables": { "proxy": "socks5://{{streisand_ipv4_address}}:9999", "username": "passmefast", "password": "aviscousSecurity", "ip":"{{streisand_ipv4_address}}", "type":"digitalocean", "blockCount":0, "lastUsedAt": "2019-05-25", "stopUseUntil": "2019-05-25"}}'
+    body: '{"query": "mutation CreateProxy($proxy: String!, $stopUseUntil: DateTime $ip: String!, $type: String, $blockCount: Int, $username: String, $password: String, $lastUsedAt: DateTime) { createProxy(data:{proxy: $proxy, stopUseUntil:$stopUseUntil ip: $ip, type: $type, blockCount:$blockCount, lastUsedAt: $lastUsedAt, username: $username, password: $password}){ip} }","variables": { "proxy": "http://{{streisand_ipv4_address}}:3128", "username": "passmefast", "password": "aviscousSecurity", "ip":"{{streisand_ipv4_address}}", "type":"digitalocean", "blockCount":0, "lastUsedAt": "2019-05-25", "stopUseUntil": "2019-05-25"}}'
     body_format: json
     headers:
       Content-Type: "application/json"
